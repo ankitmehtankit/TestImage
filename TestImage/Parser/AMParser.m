@@ -57,7 +57,9 @@
 -(void)createConnectionRequestForJsonWithURL:(NSString *)urlString WithJsonDictionary:(NSDictionary *)jsonDict {
     NSError *jsonError;
     NSData *requestData = [NSJSONSerialization dataWithJSONObject:jsonDict options:NSUTF8StringEncoding error:&jsonError];
+    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",k_URL_CommonURLString,urlString]];
+
     apiMethod = urlString;
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];

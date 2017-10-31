@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataModels.h"
 
 @interface AMHomeViewCollectionViewCell : UICollectionViewCell
+{
+    IBOutlet UIImageView *image_Cell;
+}
+@property     IBOutlet UIImageView *image_Cell;
 
+-(void) setCellValueWithPhoto:(AM_Photo *)objPhoto AtIndexPath:(NSIndexPath *)indexPath;
 @end

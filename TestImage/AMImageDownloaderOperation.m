@@ -10,4 +10,16 @@
 
 @implementation AMImageDownloaderOperation
 
+-(id)init {
+    
+    return self;
+}
+-(id)initWithPhoto:(AM_Photo *)objPhotoOld {
+    objPhoto = objPhotoOld;
+    return self;
+}
+-(void) main {
+    NSLog(@"Calling main function for NSOperation in Background");
+    NSLog(@"objPhoto URL = %@",objPhoto.urlT);
+}
 @end
